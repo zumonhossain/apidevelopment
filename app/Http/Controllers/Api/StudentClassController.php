@@ -70,4 +70,10 @@ class StudentClassController extends Controller{
             return response()->json(['success' => 'false', 'status_code' => '500', 'message' => $ex->getMessage(), 'error' => 'error']);
         }
     }
+
+    public function deleteStudentClass($id){
+        $delete = StudentClass::where('id',$id)->delete();
+        return response()->json(['success' => 'true', 'status_code' => '200', 'data' => $delete]);
+    }
+
 }

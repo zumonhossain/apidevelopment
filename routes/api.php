@@ -19,3 +19,4 @@ use App\Http\Controllers\Api\StudentClassController;
 Route::get('/student/class', [StudentClassController::class, 'index']);
 Route::post('/save/student/class', [StudentClassController::class, 'saveStudentClass']);
 Route::post('/update/student/class/{id}', [StudentClassController::class, 'updateStudentClass']);
+Route::get('/delete/student/class/{id}', [StudentClassController::class, 'deleteStudentClass']);
