@@ -31,6 +31,7 @@ Route::get('/delete/student/class/{id}', [StudentClassController::class, 'delete
 Route::get('/subject', [SubjectController::class, 'index']);
 Route::get('/view/subject/{id}', [SubjectController::class, 'viewSubject']);
 Route::post('/save/subject', [SubjectController::class, 'saveSubject']);
+Route::post('/update/subject/{id}', [SubjectController::class, 'updateSubject']);
 
 
 
