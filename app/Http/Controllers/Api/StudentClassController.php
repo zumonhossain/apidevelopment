@@ -20,6 +20,10 @@ class StudentClassController extends Controller{
         // return response()->json($studentClass);
     }
 
+    public function viewStudentClass($id){
+        $view = StudentClass::where('id',$id)->firstOrFail();
+        return response()->json(['success' => 'true', 'status_code' => '200', 'data' => $view]);
+    }
 
     public function saveStudentClass(Request $request){
 
