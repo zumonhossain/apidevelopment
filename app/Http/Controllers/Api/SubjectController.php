@@ -77,5 +77,9 @@ class SubjectController extends Controller{
         }
     }
 
+    public function deleteSubject($id){
+        $delete = Subject::where('id',$id)->delete();
+        return response()->json(['success' => 'true', 'status_code' => '200', 'data' => $delete]);
+    }
     
 }
