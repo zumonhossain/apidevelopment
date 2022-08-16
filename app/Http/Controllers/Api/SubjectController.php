@@ -12,4 +12,9 @@ class SubjectController extends Controller{
         $allSubject = Subject::get();
         return response()->json(['success' => 'true', 'status_code' => '200', 'data' => $allSubject]);
     }
+
+    public function viewSubject($id){
+        $viewSubject = Subject::where('id',$id)->firstOrFail();
+        return response()->json(['success' => 'true', 'status_code' => '200', 'data' => $viewSubject]);
+    }
 }

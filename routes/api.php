@@ -29,6 +29,7 @@ Route::get('/delete/student/class/{id}', [StudentClassController::class, 'delete
 
 // Subject
 Route::get('/subject', [SubjectController::class, 'index']);
+Route::get('/view/subject/{id}', [SubjectController::class, 'viewSubject']);
 
 
 
