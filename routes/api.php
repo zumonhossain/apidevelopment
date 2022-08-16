@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\StudentClassController;
 use App\Http\Controllers\Api\SubjectController;
+use App\Http\Controllers\Api\SectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,11 @@ Route::get('/view/subject/{id}', [SubjectController::class, 'viewSubject']);
 Route::post('/save/subject', [SubjectController::class, 'saveSubject']);
 Route::post('/update/subject/{id}', [SubjectController::class, 'updateSubject']);
 Route::get('/delete/subject/{id}', [SubjectController::class, 'deleteSubject']);
+
+
+
+// Section
+Route::get('/section', [SectionController::class, 'index']);
 
 
 
