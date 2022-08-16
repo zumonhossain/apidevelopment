@@ -16,4 +16,5 @@ use App\Http\Controllers\Api\StudentClassController;
 */
 
 
-Route::get('student/class', [StudentClassController::class, 'index']);
+Route::get('/student/class', [StudentClassController::class, 'index']);
+Route::post('/save/student/class', [StudentClassController::class, 'saveStudentClass']);
