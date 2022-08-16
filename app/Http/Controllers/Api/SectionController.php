@@ -20,4 +20,30 @@ class SectionController extends Controller{
         return response()->json(['success' => 'true', 'status_code' => '200', 'data' => $viewSection]);
     }
 
+    public function saveSection(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'class_id' => 'required',
+            'section_name' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['success' => 'false', 'status_code' => '401', 'error' => 'error', 'message' => $validator->errors()]);
+        }
+
+        try {
+
+            $section = Section::insertGetId([
+                'class_id' => $request['class_id'],
+                'section_name' => $request['section_name'],
+                'created_at' => Carbon::now()
+            ]);
+
+            return response()->json(['success' => 'true', 'status_code' => '200', 'data' => $section]);
+        }
+        catch (Exception $ex) {
+            return response()->json(['success' => 'false', 'status_code' => '500', 'message' => $ex->getMessage(), 'error' => 'error']);
+        }
+    }
+
 }

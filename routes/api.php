@@ -40,6 +40,7 @@ Route::get('/delete/subject/{id}', [SubjectController::class, 'deleteSubject']);
 // Section
 Route::get('/section', [SectionController::class, 'index']);
 Route::get('/view/section/{id}', [SectionController::class, 'viewSection']);
+Route::post('/save/section', [SectionController::class, 'saveSection']);
 
 
 
