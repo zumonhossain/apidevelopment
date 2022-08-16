@@ -14,4 +14,10 @@ class SectionController extends Controller{
         $allSection = Section::get();
         return response()->json(['success' => 'true', 'status_code' => '200', 'data' => $allSection]);
     }
+
+    public function viewSection($id){
+        $viewSection = Section::where('id',$id)->firstOrFail();
+        return response()->json(['success' => 'true', 'status_code' => '200', 'data' => $viewSection]);
+    }
+
 }
