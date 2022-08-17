@@ -101,4 +101,8 @@ class StudentController extends Controller{
         }
     }
 
+    public function deleteStudent($id){
+        $delete = Student::where('id',$id)->delete();
+        return response()->json(['success' => 'true', 'status_code' => '200', 'data' => $delete]);
+    }
 }

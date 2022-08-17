@@ -51,6 +51,7 @@ Route::get('/student', [StudentController::class, 'index']);
 Route::get('/view/student/{id}', [StudentController::class, 'viewStudent']);
 Route::post('/save/student', [StudentController::class, 'saveStudent']);
 Route::post('/update/student/{id}', [StudentController::class, 'updateStudent']);
+Route::get('/delete/student/{id}', [StudentController::class, 'deleteStudent']);
 
 
 
