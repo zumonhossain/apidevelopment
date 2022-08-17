@@ -16,5 +16,10 @@ class StudentController extends Controller{
         return response()->json(['success' => 'true', 'status_code' => '200', 'data' => $allStudent]);
     }
 
+    public function viewStudent($id){
+        $viewStudent = Student::where('id',$id)->firstOrFail();
+        return response()->json(['success' => 'true', 'status_code' => '200', 'data' => $viewStudent]);
+    }
+
 
 }
