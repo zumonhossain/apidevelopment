@@ -49,6 +49,7 @@ Route::get('/delete/section/{id}', [SectionController::class, 'deleteSection']);
 // Student
 Route::get('/student', [StudentController::class, 'index']);
 Route::get('/view/student/{id}', [StudentController::class, 'viewStudent']);
+Route::post('/save/student', [StudentController::class, 'saveStudent']);
 
 
 
