@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\StudentClassController;
 use App\Http\Controllers\Api\SubjectController;
 use App\Http\Controllers\Api\SectionController;
 use App\Http\Controllers\Api\StudentController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,7 +55,18 @@ Route::post('/update/student/{id}', [StudentController::class, 'updateStudent'])
 Route::get('/delete/student/{id}', [StudentController::class, 'deleteStudent']);
 
 
+Route::group([
 
+    'prefix' => 'auth'
+
+], function () {
+
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::post('/refresh', [AuthController::class, 'refresh']);
+    Route::post('/me', [AuthController::class, 'me']);
+
+});
 
 
 
